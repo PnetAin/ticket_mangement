@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to Ticket Management</h1>
+<p>Manage tickets, create notes, and generate content seamlessly.</p>
+<a href="{{ url_for('tickets.manage_tickets') }}" class="btn">View Tickets</a>
+{% endblock %}

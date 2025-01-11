@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Saved Tickets{% endblock %}
+
+{% block content %}
+<h1>Saved Tickets</h1>
+<ul>
+    {% for ticket in tickets %}
+    <li>
+        <strong>{{ ticket.title }}</strong> - {{ ticket.status }}
+        <p>{{ ticket.description }}</p>
+        <small>Notes: {{ ticket.notes }}</small>
+        <!-- Add the edit link -->
+        <a href="{{ url_for('tickets.edit_ticket', ticket_id=ticket.id) }}">Edit Ticket</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="/tickets">Back to Tickets</a>
+{% endblock %}
